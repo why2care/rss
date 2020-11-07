@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-        curl --connect-timeout 120 -max-time 120 "https://vanihutam.000webhostapp.com/feeds/export/?do=Build&MarkeRead=y"
+        curl "https://vanihutam.000webhostapp.com/feeds/export/?do=Build&MarkeRead=y"
