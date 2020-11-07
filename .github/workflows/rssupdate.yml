@@ -11,5 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-        curl -X "GET" "http://vanihutam.000webhostapp.com/feeds/services.php?source=github&do=RSSUpdate" \
-          -H 'Content-Type: application/json; charset=utf-8'
+        curl --connect-timeout 60 -max-time 60 "http://vanihutam.000webhostapp.com/feeds/services.php?source=github&do=RSSUpdate"
