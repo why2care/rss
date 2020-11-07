@@ -1,0 +1,15 @@
+name: BuildRSS
+
+on:
+  schedule:
+    - cron:  '0 3 * * *'
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: request url
+        run: |
+          curl 'https://vanihutam.000webhostapp.com/feeds/export/?do=Build&MarkeRead=y'
