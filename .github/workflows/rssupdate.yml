@@ -1,14 +1,15 @@
-name: Job - RSSUpdate
+name: UpdateRSS
 
 on:
-  workflow_dispatch:
   schedule:
-    # */10 * * * *
-    - cron: '*/10 * * * *'
+    - cron:  '*/15 * * * *'
 
 jobs:
-  job-rssupdate:
+
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - run: |
-        curl "http://vanihutam.000webhostapp.com/feeds/services.php?source=github&do=RSSUpdate"
+      - name: request url
+        run: |
+          curl 'http://vanihutam.000webhostapp.com/feeds/services.php?source=github&do=RSSUpdate'
