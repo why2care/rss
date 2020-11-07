@@ -1,0 +1,14 @@
+name: Job - RSSBuild
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 0 0 * * *
+    - cron: '0 0 * * *'
+
+jobs:
+  job-rssbuild:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+        curl --connect-timeout 120 -max-time 120 "https://vanihutam.000webhostapp.com/feeds/export/?do=Build&MarkeRead=y"
